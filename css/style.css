@@ -112,7 +112,7 @@ html{
 #home{
     height: 100vh;
     min-height: 500px;
-    background: url(../images/back.gif) no-repeat center;
+    background: black;
     background-size: cover;
     filter:blur(3);
     -webkit-filter:blur(3);
@@ -502,7 +502,7 @@ section{
     color: #fff;
     padding: 80px 0;
     text-align: center;
-    background:url(../images/back.gif) no-repeat center;
+    background:black;
   }
   
   .copyright{
@@ -512,8 +512,9 @@ section{
   
   .copyright a{
     font-size: 16px;
-    color: rgb(255, 81, 0);
+    color: rgb(161, 159, 158);
     font-weight: 500;
+    text-decoration: none;
   }
   
   .goTop{
