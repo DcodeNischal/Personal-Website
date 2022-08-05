@@ -50,11 +50,13 @@ html{
     background-size:cover;
     transition: .2s;
     text-decoration: none;
-    color: #ddd;
+    color: white;
     font-family: monospace;
     font-size: 20px;
     border: 1px solid white;
-    padding: 4px 10px;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
 }
 
 .menu-toggler{
@@ -97,7 +99,7 @@ html{
 }
 
 .sticky .logo{
-    color: #111;
+    color: black;
     border: 1px solid black;
 } 
 
