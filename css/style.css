@@ -353,6 +353,9 @@ section{
   .mysql::after{
     width: 50%;
   }
+  .git::after{
+    width: 40%;
+  }
 
 
   section.dark{
