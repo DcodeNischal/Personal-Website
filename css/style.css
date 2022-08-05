@@ -112,12 +112,11 @@ html{
 #home{
     height: 100vh;
     min-height: 500px;
-    background: black;
+    background:url(../images/back.gif) no-repeat center;
     background-size: cover;
     filter:blur(3);
     -webkit-filter:blur(3);
     background-attachment: fixed;
-    background-color:#111;
 }
 
 #home .inner-width{
@@ -344,10 +343,14 @@ section{
   }
 
   .php::after{
-    width: 40%;
+    width: 60%;
   }
 
   .cpp::after{
+    width: 70%;
+  }
+
+  .mysql::after{
     width: 50%;
   }
 
@@ -502,7 +505,7 @@ section{
     color: #fff;
     padding: 80px 0;
     text-align: center;
-    background:black;
+    background:url(../images/back.gif) no-repeat center;
   }
   
   .copyright{
