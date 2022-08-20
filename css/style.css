@@ -355,8 +355,8 @@ section{
   .mysql::after{
     width: 50%;
   }
-  .git::after{
-    width: 40%;
+  .bash::after{
+    width: 30%;
   }
 
 
