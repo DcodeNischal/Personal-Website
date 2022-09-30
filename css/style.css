@@ -493,8 +493,10 @@ section{
     border: 1px solid rgb(230, 69, 5);
 
   }
+
   
-  .project-info a{
+  
+  .project-info i{
     display: block;
     font-size: 40px;
     line-height: 120px;
@@ -509,11 +511,59 @@ section{
     transform:scale(0.9);
   }
 
-  .project-info .item:hover a{
+  .project-info .item:hover i{
     color: #fff;
     transition: .7s;
   }
+
+
+  .projects .inner-width{
+    background-color: white;
+    padding: 40px 0px;
+    width: 80%;
+  }
+
+  .projects .projects-container{
+    margin-left: 3%;
+    padding: 40px 0px;
+
+  }
+
+  .projects .project-info{
+    margin-bottom: 60px;
+    width:calc(100% - 20px);
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+  }
+
+  .projects .btn{
+    color: #111;
+    background-color: rgb(255, 81, 0);
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+  }
   
+  #webdevelopment{
+    display: none;
+  }
+
+  #cybersecurity, #others{
+    display: none;
+  }
   
   .contact-info{
     display: flex;
@@ -544,7 +594,12 @@ section{
     line-height: 120px;
     height: 100px;
     text-decoration: none;
-    color: inherit;
+    color: rgb(255, 81, 0);
+  }
+
+  .contact-info .item:hover a{
+    color: #fff;
+    transition: .7s;
   }
   
   .contact-info .item:hover{
