@@ -241,23 +241,125 @@
     <section id="project" class="dark primary">
         <div class="inner-width">
             <h1 class="section-title">Projects</h1>
-            <div class="project-info">
-                <div class="item secondary">
-                    <a href="projects-web.html" class="fas fa-globe"></a>
+            <div class="project-info" id="buttonContainer">
+                <div class="item secondary buttons webdevelopment" onclick="change('webdevelopment','cybersecurity','others');">
+                    <i class="fas fa-globe"></i>
                     Web Development
                 </div>
 
-                <div class="item secondary">
-                    <a href="projects-cybersecurity.html" class="fas fa-shield-alt"></a>
+                <div class="item secondary buttons cybersecurity" onclick="change('cybersecurity','webdevelopment','others');">
+                    <i class="fas fa-shield-alt"></i>
                     Cybersecurity
                 </div>
 
-                <div class="item secondary">
-                    <a href="projects-others.html" class="fas fa-code"></a>
+                <div class="item secondary buttons others" onclick="change('others','webdevelopment','cybersecurity');">
+                    <i class="fas fa-code"></i>
                     Others
                 </div>
             </div>
         </div>
+
+        <section id="webdevelopment" class="projects dark">
+            <div class="inner-width">
+                <div class="projects-container">
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Portfolio Website</h1>
+                            <p>My portfolio website made using HTML, CSS, Javascript and PHP</p>
+                            <a href="https://github.com/DcodeNischal/Personal-Website" class="btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>ShipinArt Inc.</h1>
+                            <p>ShipinArt Inc. was a college projects for which I worked completely on frontend development.</p>
+                            <a href="https://github.com/DcodeNischal/ShipinArt" class="btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Webcard</h1>
+                            <p>It is a simple project using HTML and CSS.</p>
+                            <a href="https://github.com/DcodeNischal/web-card" class="btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Password Strength Checker</h1>
+                            <p>It is a security tool to check the strength of password. It was build using HTML/CSS and Javascript.</p>
+                            <a href="https://github.com/DcodeNischal/password-strength-checker" class="btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Gunmail</h1>
+                            <p>It was a fun project making a website using html only.</p>
+                            <a href="https://github.com/DcodeNischal/progressive-website" class="btn">View</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="cybersecurity" class="projects dark">
+            <div class="inner-width">
+                <div class="projects-container">
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Python Keylogger</h1>
+                            <p>I made the python keylogger using pyHook library that captures the keystrokes and stores them in a log file.</p>
+                            <a href="https://github.com/DcodeNischal/keylogger" class="btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Random Password Generator</h1>
+                            <p>This simple program generates random strong password and saves them in a file for future use too.</p>
+                            <a href="https://github.com/DcodeNischal/ranpassgen" class="btn">View</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Password Strength Checker</h1>
+                            <p>It is a security tool to check the strength of password. It was build using HTML/CSS and Javascript.</p>
+                            <a href="https://github.com/DcodeNischal/password-strength-checker" class="btn">View</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="others" class="projects dark">
+            <div class="inner-width">
+                <div class="projects-container">
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Python Mini Projects</h1>
+                            <p>This contains some python mini projects like timer, calculator, QR code generator and Decoder etc.</p>
+                            <a href="https://github.com/DcodeNischal/python_mini_projects" class="btn">View</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
     </section>
 
     <!-- Contact -->

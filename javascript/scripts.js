@@ -22,3 +22,14 @@ $(document).ready(function(){
   });
 
 });
+
+function change(flag1,flag2,flag3){
+  if(document.getElementById(flag1).style.display=="none"){
+    document.getElementById(flag1).style.display="flex";
+  }
+  else{
+    document.getElementById(flag1).style.display="none";
+  }
+  document.getElementById(flag2).style.display="none";
+  document.getElementById(flag3).style.display="none";
+}
