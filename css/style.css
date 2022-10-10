@@ -165,7 +165,7 @@ html{
 
 .sm a:hover{
   color:gray;
-  transform: rotateZ(45deg) scale(1.5);
+  transform:scale(1.5);
 }
 
 #home .buttons{
@@ -184,6 +184,7 @@ html{
     border-radius: 6px;
     transition: .2s linear;
     text-decoration: none;
+    background-color: rgb(0,0,0,0.2);
 }
 
 #home .buttons a:hover
@@ -405,6 +406,7 @@ section{
     color: #fff;
     cursor: pointer;
     transition: .3s linear;
+    background-color: rgb(0,0,0,0.2);
   }
 
   .service .icon{
@@ -504,6 +506,7 @@ section{
     transition: .3s linear;
     text-decoration: none;
     border: 1px solid gray;
+    background-color: rgb(0,0,0,0.2);
   }
 
   
@@ -619,7 +622,7 @@ section{
   .contact-info .item{
     width: calc(33% - 20px);
     height: 160px;
-    background-color: #111;
+    background-color: rgb(0,0,0,0.2);
     color: #fff;
     text-align: center;
     border-radius: 1px;
@@ -665,6 +668,12 @@ section{
     border-radius: 4px;
     color: rgb(255, 255, 255);
   }
+
+  .contact-form input:active, .contact-form input:focus, .contact-form textarea:active, .contact-form textarea:focus{
+    border: 2px solid gray;
+    transition: .2s;
+
+  }
   
   .nameZone, .emailZone{
     max-width: calc(50% - 10px);
@@ -689,7 +698,7 @@ section{
   
   .contact-form .btn:hover{
     background-color: gray;
-    color: #fff;
+    color: #000;
   }
 
  
