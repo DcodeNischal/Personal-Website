@@ -622,7 +622,7 @@ section{
   .contact-info .item{
     width: calc(33% - 20px);
     height: 160px;
-    background-color: rgb(0,0,0,0.2);
+    background-color: rgb(0,0,0,1);
     color: #fff;
     text-align: center;
     border-radius: 1px;
