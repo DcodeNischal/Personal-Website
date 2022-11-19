@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#bg-music").get(0).play();
+  // $("#bg-music").get(0).play();
   $(window).scroll(function () {
     if (this.scrollY > 20) {
       $(".navbar").addClass("sticky");
