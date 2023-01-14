@@ -209,7 +209,7 @@ html {
 
 .sticky {
   background-color: var(--secondary);
-  padding: 10px 0;
+  padding: 00px 0;
 }
 
 .sticky .logo {
@@ -869,7 +869,7 @@ footer {
     background-color: #353b48;
     top: 0;
     right: -100%;
-    max-width: 400px;
+    max-width: 300px;
     padding: 80px 50px;
     transition: 0.3s linear;
   }
@@ -878,18 +878,6 @@ footer {
     display: block;
     font-size: 30px;
     margin: 30px 0;
-  }
-
-  #overlayer {
-    display: none;
-  }
-
-  .preloader {
-    display: none;
-  }
-
-  .loader {
-    display: none;
   }
 
   .sticky .navbar-menu {

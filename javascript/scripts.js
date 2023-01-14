@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  // $("#bg-music").get(0).play();
   $(window).scroll(function () {
     if (this.scrollY > 20) {
       $(".navbar").addClass("sticky");
@@ -25,8 +24,8 @@ $(document).ready(function () {
 });
 
 $(window).load(function () {
-  $(".preloader").delay(5000).fadeOut("slow");
-  $("#overlayer").delay(5000).fadeOut("slow");
+  $(".preloader").delay(4000).fadeOut("slow");
+  $("#overlayer").delay(4000).fadeOut("slow");
 });
 
 function change(flag1, flag2, flag3) {
