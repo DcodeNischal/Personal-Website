@@ -1,3 +1,8 @@
+:root {
+  --primary: #111;
+  --secondary: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +15,8 @@ html {
 }
 
 ::selection {
-  background-color: black;
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
 ::-webkit-scrollbar {
@@ -22,6 +27,115 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: #353b48;
 }
+
+/* Preloader */
+
+#overlayer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #4a4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 1000;
+  border: 4px solid #fff;
+  top: 50%;
+  left: 50%;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+/* Navbar */
 
 .navbar {
   position: fixed;
@@ -50,10 +164,10 @@ html {
   background-size: cover;
   transition: 0.2s;
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
   font-family: monospace;
   font-size: 20px;
-  border: 1px solid white;
+  border: 1px solid var(--secondary);
   padding: 7px 10px;
   display: flex;
   align-items: center;
@@ -73,14 +187,14 @@ html {
 .menu-toggler span {
   display: block;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--secondary);
   margin: 6px 0;
   position: relative;
   transition: 0.3s linear;
 }
 
 .navbar-menu a {
-  color: #fff;
+  color: var(--secondary);
   font-size: 15px;
   font-weight: 500;
   margin-left: 30px;
@@ -89,26 +203,26 @@ html {
 }
 
 .navbar-menu a:hover {
-  color: gray;
+  color: #808080;
   transform: scale(1.5) translate(10%, 0%);
 }
 
 .sticky {
-  background-color: #fff;
+  background-color: var(--secondary);
   padding: 10px 0;
 }
 
 .sticky .logo {
-  color: black;
-  border: 1px solid black;
+  color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .sticky .navbar-menu a {
-  color: #111;
+  color: var(--primary);
 }
 
 .sticky .menu-toggler span {
-  background-color: #111;
+  background-color: var(--primary);
 }
 
 #home {
@@ -131,7 +245,7 @@ html {
 
 #home .content {
   width: 100%;
-  color: #fff;
+  color: var(--secondary);
 }
 
 #home .content h1 {
@@ -159,7 +273,7 @@ html {
 }
 
 .sm a {
-  color: white;
+  color: var(--secondary);
   font-size: 22px;
   margin: 0 10px;
   transition: 0.2s linear;
@@ -167,7 +281,7 @@ html {
 }
 
 .sm a:hover {
-  color: gray;
+  color: #808080;
   transform: scale(1.5);
 }
 
@@ -178,7 +292,7 @@ html {
 #home .buttons a {
   display: inline-block;
   margin: 15px 10px;
-  color: white;
+  color: var(--secondary);
   font-size: 15px;
   font-weight: 500;
   width: 180px;
@@ -191,8 +305,8 @@ html {
 }
 
 #home .buttons a:hover {
-  background-color: gray;
-  color: #fff;
+  background-color: #808080;
+  color: var(--secondary);
 }
 
 #home .buttons a:hover {
@@ -210,7 +324,7 @@ section {
   position: relative;
   font-size: 26px;
   padding-bottom: 20px;
-  color: #111;
+  color: var(--primary);
 }
 
 .section-title::before {
@@ -218,7 +332,7 @@ section {
   position: absolute;
   width: 80px;
   height: 3px;
-  background-color: #111;
+  background-color: var(--primary);
   bottom: 0;
   left: calc(50% - 40px);
 }
@@ -228,7 +342,7 @@ section {
   position: absolute;
   width: 16px;
   height: 10px;
-  background-color: white;
+  background-color: var(--secondary);
   border: 4px solid rgb(22, 20, 20);
   left: calc(50% - 12px);
   bottom: -7px;
@@ -243,7 +357,7 @@ section {
 .about-pic {
   width: 200px;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid var(--secondary);
   margin-right: 100px;
   transition: 0.2s;
 }
@@ -255,13 +369,27 @@ section {
 .about-text a {
   font-family: monospace bold;
   font-weight: 700;
-  color: black;
+  color: var(--primary);
 }
 .about-text h2 {
-  color: black;
+  color: var(--primary);
   margin-top: 0;
   font-family: monospace bold;
   font-weight: 500;
+}
+
+.about-text h2 .name-animate::before {
+  content: "Nischal Dhakal";
+  animation: name 10s linear infinite;
+}
+
+@keyframes name {
+  0% {
+    content: "Nischal Dhakal";
+  }
+  50% {
+    content: "GodZer0";
+  }
 }
 
 .about-text h3 {
@@ -316,7 +444,7 @@ section {
   content: "";
   position: absolute;
   height: 6px;
-  background-color: gray;
+  background-color: #808080;
   bottom: 0;
 }
 
@@ -376,7 +504,7 @@ section.dark .section-title::before {
 }
 
 section.dark .section-title::after {
-  border: 4px solid #fff;
+  border: 4px solid var(--secondary);
   background: linear-gradient(
     to right,
     rgb(39, 38, 38) 50%,
@@ -393,18 +521,18 @@ section.dark .section-title::after {
 .service {
   width: calc(50% - 20px);
   text-align: center;
-  border: 1px solid gray;
+  border: 1px solid #808080;
   border-radius: 6px;
   margin: 20px 0;
   padding: 40px 20px;
-  color: #fff;
+  color: var(--secondary);
   cursor: pointer;
   transition: 0.3s linear;
   background-color: rgb(0, 0, 0, 0.2);
 }
 
 .service .icon {
-  color: white;
+  color: var(--secondary);
   font-size: 40px;
   margin-bottom: 20px;
   transition: 0.3s linear;
@@ -417,12 +545,12 @@ section.dark .section-title::after {
 }
 
 .service:hover {
-  background-color: gray;
+  background-color: #808080;
   transform: scale(0.9);
 }
 
 .service:hover .icon {
-  color: #fff;
+  color: var(--secondary);
 }
 
 .time-line {
@@ -433,7 +561,7 @@ section.dark .section-title::after {
 
 .block {
   width: calc(50% - 20px);
-  background-color: #fff;
+  background-color: var(--secondary);
   border: 1px solid #ddd;
   margin: 10px 0;
   padding: 30px;
@@ -489,13 +617,13 @@ section.dark .section-title::after {
 .project-info .item {
   width: calc(33% - 20px);
   height: 160px;
-  color: #fff;
+  color: var(--secondary);
   text-align: center;
   border-radius: 1px;
   cursor: pointer;
   transition: 0.3s linear;
   text-decoration: none;
-  border: 1px solid gray;
+  border: 1px solid #808080;
   background-color: rgb(0, 0, 0, 0.2);
 }
 
@@ -505,17 +633,17 @@ section.dark .section-title::after {
   line-height: 120px;
   height: 100px;
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
   transition: 0.3s linear;
 }
 
 .project-info .item:hover {
-  background: gray;
+  background: #808080;
   transform: scale(0.9);
 }
 
 .project-info .item:hover i {
-  color: #fff;
+  color: var(--secondary);
   transition: 0.7s;
 }
 
@@ -532,7 +660,7 @@ section.dark .section-title::after {
 
 .title-div h2 {
   font-size: 30px;
-  color: white;
+  color: var(--secondary);
   text-align: center;
   width: 100%;
 }
@@ -554,7 +682,7 @@ section.dark .section-title::after {
   margin-bottom: 60px;
   width: calc(100% - 20px);
   text-align: center;
-  color: white;
+  color: var(--secondary);
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -562,12 +690,12 @@ section.dark .section-title::after {
   flex-direction: column;
   border-bottom-left-radius: 30px;
   border-top-right-radius: 30px;
-  border: 1px solid gray;
+  border: 1px solid #808080;
 }
 
 .projects .btn {
-  color: gray;
-  background-color: white;
+  color: #808080;
+  background-color: var(--secondary);
   text-align: center;
   font-size: 20px;
   padding: 10px 20px;
@@ -577,12 +705,12 @@ section.dark .section-title::after {
   align-items: center;
   text-decoration: none;
   border-radius: 30px;
-  border: 1px solid gray;
+  border: 1px solid #808080;
 }
 
 .projects .btn:hover {
-  color: white;
-  background-color: gray;
+  color: var(--secondary);
+  background-color: #808080;
   transition: 0.3s linear;
 }
 
@@ -609,7 +737,7 @@ section.dark .section-title::after {
   width: calc(33% - 20px);
   height: 160px;
   background-color: rgb(0, 0, 0, 1);
-  color: #fff;
+  color: var(--secondary);
   text-align: center;
   border-radius: 1px;
   cursor: pointer;
@@ -623,16 +751,16 @@ section.dark .section-title::after {
   line-height: 120px;
   height: 100px;
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
 }
 
 .contact-info .item:hover a {
-  color: white;
+  color: var(--secondary);
   transition: 0.7s;
 }
 
 .contact-info .item:hover {
-  background-color: gray;
+  background-color: #808080;
   transform: scale(0.9);
 }
 
@@ -659,7 +787,7 @@ section.dark .section-title::after {
 .contact-form input:focus,
 .contact-form textarea:active,
 .contact-form textarea:focus {
-  border: 2px solid gray;
+  border: 2px solid #808080;
   transition: 0.2s;
 }
 
@@ -675,8 +803,8 @@ section.dark .section-title::after {
 
 .contact-form .btn {
   width: 180px;
-  background-color: black;
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   font-size: 16px;
   border: none;
   padding: 0;
@@ -686,12 +814,12 @@ section.dark .section-title::after {
 }
 
 .contact-form .btn:hover {
-  background-color: gray;
+  background-color: #808080;
   color: #000;
 }
 
 footer {
-  color: #fff;
+  color: var(--secondary);
   padding: 80px 0;
   text-align: center;
   background: linear-gradient(
@@ -720,11 +848,11 @@ footer {
   right: 40px;
   width: 40px;
   height: 40px;
-  background-color: gray;
+  background-color: #808080;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  color: #fff;
+  color: var(--secondary);
   outline: none;
   display: none;
 }
@@ -750,6 +878,18 @@ footer {
     display: block;
     font-size: 30px;
     margin: 30px 0;
+  }
+
+  #overlayer {
+    display: none;
+  }
+
+  .preloader {
+    display: none;
+  }
+
+  .loader {
+    display: none;
   }
 
   .sticky .navbar-menu {
@@ -787,6 +927,11 @@ footer {
     text-align: center;
   }
 
+  #project,
+  #projects {
+    display: none;
+  }
+
   .project-info {
     flex-direction: column;
     align-items: center;
@@ -796,7 +941,7 @@ footer {
   .project-info .item {
     width: 80%;
     height: 160px;
-    color: #fff;
+    color: var(--secondary);
     text-align: center;
     border-radius: 1px;
     cursor: pointer;
@@ -817,8 +962,8 @@ footer {
   .contact-info .item {
     width: 80%;
     height: 160px;
-    background-color: #111;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--secondary);
     text-align: center;
     border-radius: 1px;
     cursor: pointer;

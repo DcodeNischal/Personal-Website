@@ -24,6 +24,11 @@ $(document).ready(function () {
   });
 });
 
+$(window).load(function () {
+  $(".preloader").delay(5000).fadeOut("slow");
+  $("#overlayer").delay(5000).fadeOut("slow");
+});
+
 function change(flag1, flag2, flag3) {
   if (document.getElementById(flag1).style.display == "block") {
     document.getElementById(flag1).style.display = "none";
