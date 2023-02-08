@@ -215,6 +215,7 @@ html {
 .sticky .logo {
   color: var(--primary);
   border: 1px solid var(--primary);
+  margin: 10px 0px;
 }
 
 .sticky .navbar-menu a {
@@ -259,7 +260,7 @@ html {
 }
 @keyframes lala {
   20% {
-    content: " I'm a Software Engineering Student";
+    content: " I'm a Student";
   }
   40% {
     content: " I'm a Digital Marketer";
@@ -359,7 +360,7 @@ section {
   border-radius: 50%;
   border: 5px solid var(--secondary);
   margin-right: 100px;
-  transition: 0.2s;
+  transition: 1s;
 }
 
 .about-text {
