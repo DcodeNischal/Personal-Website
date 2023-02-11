@@ -37,3 +37,25 @@ function change(flag1, flag2, flag3) {
   document.getElementById(flag2).style.display = "none";
   document.getElementById(flag3).style.display = "none";
 }
+
+setInterval(function () {
+  x = new Date();
+  hour = x.getHours();
+  minute = x.getMinutes();
+  ampm = "";
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
+  if (minute < 10) {
+    minute = "0" + minute;
+  }
+  if (hour > 12) {
+    hour -= 12;
+    ampm = "PM";
+  } else {
+    ampm = "AM";
+  }
+  time = hour + ":" + minute + " " + ampm;
+
+  document.getElementById("clock").innerHTML = time;
+}, 1000);
