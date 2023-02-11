@@ -40,8 +40,12 @@ function change(flag1, flag2, flag3) {
 
 setInterval(function () {
   x = new Date();
-  hour = x.getHours();
-  minute = x.getMinutes();
+  hour = x.getUTCHours() + 5;
+  minute = x.getUTCMinutes() + 45;
+  if (minute > 60) {
+    hour += 1;
+    minute -= 60;
+  }
   ampm = "";
   if (hour < 10) {
     hour = "0" + hour;
