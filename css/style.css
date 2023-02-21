@@ -252,6 +252,16 @@ section {
   transition: 1s;
 }
 
+.about-text {
+  flex: 1;
+}
+
+.about-text a {
+  font-family: monospace bold;
+  font-weight: 700;
+  color: var(--primary);
+}
+
 .about-text h3 {
   margin: 10px 0;
   color: #444;
@@ -317,11 +327,11 @@ section {
 }
 
 .js:after {
-  width: 50%;
+  width: 70%;
 }
 
 .py:after {
-  width: 60%;
+  width: 70%;
 }
 
 .ps:after {
@@ -341,10 +351,10 @@ section {
 }
 
 .mysql::after {
-  width: 50%;
+  width: 70%;
 }
 .bash::after {
-  width: 30%;
+  width: 40%;
 }
 
 section.dark {
