@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notepad for web</title>
     <!-- icon -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/686/686112.png" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/686/686112.png"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -34,8 +37,8 @@
           placeholder="Write something..."
         ></textarea>
         <div class="notepad__header__buttons__word-count">
-            <span>Word count : </span>
-            <span id="word-count">0</span>
+          <span>Word count : </span>
+          <span id="word-count">0</span>
         </div>
       </div>
       <div class="notepad__footer">
@@ -111,22 +114,21 @@
         root.style.setProperty("--secondary-color", "#fff");
       }
 
-        // word count
-        const wordCount = document.getElementById("word-count");
-        textarea.addEventListener("keyup", () => {
-            const text = textarea.value;
-            //ignore first and last white space
-            const textTrim = text.trim();
-            // split by white space
-            const words = textTrim.split(/\s+/);
-            //check if the first word is empty
-            if (words[0] === "") {
-                wordCount.innerHTML = 0;
-            } else {
-                wordCount.innerHTML = words.length;
-            }
-
-        });
+      // word count
+      const wordCount = document.getElementById("word-count");
+      textarea.addEventListener("keyup", () => {
+        const text = textarea.value;
+        //ignore first and last white space
+        const textTrim = text.trim();
+        // split by white space
+        const words = textTrim.split(/\s+/);
+        //check if the first word is empty
+        if (words[0] === "") {
+          wordCount.innerHTML = 0;
+        } else {
+          wordCount.innerHTML = words.length;
+        }
+      });
     </script>
   </body>
 </html>
