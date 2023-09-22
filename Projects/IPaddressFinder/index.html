@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Location Finder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>IP Location Finder</h1>
+      <label for="ipAddress">IP Address:</label>
+      <input type="text" id="ipAddress" placeholder="Enter an IP address" />
+      <button id="button">Find Location</button>
+      <div id="allresult">
+        <div class="title" id="title">
+          <h2>Your Details</h2>
+        </div>
+        <div class="ip"></div>
+        <div class="city"></div>
+        <div class="region"></div>
+        <div class="country"></div>
+        <div class="coordinates"></div>
+        <div class="network"></div>
+        <div class="timezone"></div>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        const ipAddress = document.getElementById("ipAddress").value;
+
+        fetch(`https://ipinfo.io/${ipAddress}/json?token=95b1576b4c2e77`)
+          .then((response) => response.json())
+          .then((data) => {
+            const ip = data.ip;
+            const city = data.city;
+            const region = data.region;
+            const country = data.country;
+            const loc = data.loc;
+            const org = data.org;
+            const timezone = data.timezone;
+
+            document.querySelector(
+              ".ip"
+            ).innerHTML = `<strong>IP Address:</strong> ${ip}`;
+            document.querySelector(
+              ".city"
+            ).innerHTML = `<strong>City:</strong> ${city}`;
+            document.querySelector(
+              ".region"
+            ).innerHTML = `<strong>Region:</strong> ${region}`;
+            document.querySelector(
+              ".country"
+            ).innerHTML = `<strong>Country:</strong> ${country}`;
+            document.querySelector(
+              ".coordinates"
+            ).innerHTML = `<strong>Coordinates:</strong> ${loc}`;
+            document.querySelector(
+              ".network"
+            ).innerHTML = `<strong>Network:</strong> ${org}`;
+            document.querySelector(
+              ".timezone"
+            ).innerHTML = `<strong>Timezone:</strong> ${timezone}`;
+          })
+          .catch((error) => {
+            resultDiv.innerText = `Error: ${error.message}`;
+          });
+      };
+
+      document.getElementById("button").addEventListener("click", function () {
+        const ipAddress = document.getElementById("ipAddress").value;
+        const title = document.getElementById("title");
+        title.innerHTML = `<h2>Results for ${ipAddress}</h2>`;
+
+        fetch(`https://ipinfo.io/${ipAddress}/json?token=95b1576b4c2e77`)
+          .then((response) => response.json())
+          .then((data) => {
+            const ip = data.ip;
+            const city = data.city;
+            const region = data.region;
+            const country = data.country;
+            const loc = data.loc;
+            const org = data.org;
+            const timezone = data.timezone;
+
+            document.querySelector(
+              ".ip"
+            ).innerHTML = `<strong>IP Address:</strong> ${ip}`;
+            document.querySelector(
+              ".city"
+            ).innerHTML = `<strong>City:</strong> ${city}`;
+            document.querySelector(
+              ".region"
+            ).innerHTML = `<strong>Region:</strong> ${region}`;
+            document.querySelector(
+              ".country"
+            ).innerHTML = `<strong>Country:</strong> ${country}`;
+            document.querySelector(
+              ".coordinates"
+            ).innerHTML = `<strong>Coordinates:</strong> ${loc}`;
+            document.querySelector(
+              ".network"
+            ).innerHTML = `<strong>Network:</strong> ${org}`;
+            document.querySelector(
+              ".timezone"
+            ).innerHTML = `<strong>Timezone:</strong> ${timezone}`;
+          })
+          .catch((error) => {
+            resultDiv.innerText = `Error: ${error.message}`;
+          });
+      });
+
+      document
+        .getElementById("yourlocation")
+        .addEventListener("click", function () {
+          const ipAddress = ducument.getElementById("yourlocationinput").value;
+          const resultDiv = document.getElementById("result");
+
+          fetch(`https://ipinfo.io/${ipAddress}/json?token=95b1576b4c2e77`)
+            .then((response) => response.json())
+            .then((data) => {
+              const ip = data.ip;
+              const city = data.city;
+              const region = data.region;
+              const country = data.country;
+              const loc = data.loc;
+              const org = data.org;
+              const timezone = data.timezone;
+
+              document.querySelector(
+                ".ip"
+              ).innerHTML = `<strong>IP Address:</strong> ${ip}`;
+              document.querySelector(
+                ".city"
+              ).innerHTML = `<strong>City:</strong> ${city}`;
+              document.querySelector(
+                ".region"
+              ).innerHTML = `<strong>Region:</strong> ${region}`;
+              document.querySelector(
+                ".country"
+              ).innerHTML = `<strong>Country:</strong> ${country}`;
+              document.querySelector(
+                ".coordinates"
+              ).innerHTML = `<strong>Coordinates:</strong> ${loc}`;
+              document.querySelector(
+                ".network"
+              ).innerHTML = `<strong>Network:</strong> ${org}`;
+              document.querySelector(
+                ".timezone"
+              ).innerHTML = `<strong>Timezone:</strong> ${timezone}`;
+            })
+            .catch((error) => {
+              resultDiv.innerText = `Error: ${error.message}`;
+            });
+        });
+
+      document
+        .getElementById("ipAddress")
+        .addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("button").click();
+          }
+        });
+
+      document
+        .getElementById("ipAddress")
+        .addEventListener("click", function () {
+          document.getElementById("ipAddress").value = "";
+        });
+
+      document.getElementById("button").addEventListener("click", function () {
+        document.getElementById("allresult").style.display = "block";
+        document.getElementById("buttom").value = "";
+      });
+    </script>
+  </body>
+</html>

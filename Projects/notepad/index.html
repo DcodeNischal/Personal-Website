@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad for web</title>
+    <!-- icon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/686/686112.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- notepad area -->
+    <div class="notepad">
+      <div class="notepad__header">
+        <div class="notepad__header__title">
+          <h1>Simple Notepad</h1>
+        </div>
+        <div class="notepad__header__buttons">
+          <button class="notepad__header__buttons__button" id="light">
+            LIGHT MODE
+          </button>
+          <button class="notepad__header__buttons__button" id="save">
+            SAVE NOTE
+          </button>
+          <button class="notepad__header__buttons__button" id="clear">
+            CLEAR
+          </button>
+        </div>
+      </div>
+      <div class="notepad__body">
+        <textarea
+          class="notepad__body__textarea"
+          id="textarea"
+          placeholder="Write something..."
+        ></textarea>
+        <div class="notepad__header__buttons__word-count">
+            <span>Word count : </span>
+            <span id="word-count">0</span>
+        </div>
+      </div>
+      <div class="notepad__footer">
+        <p>Created by <a href="https://nischaldhakal.com.np">GodZer0</a></p>
+      </div>
+    </div>
+    <!-- end of notepad area -->
+
+    <!-- scripts -->
+    <script>
+      // get elements
+      const textarea = document.getElementById("textarea");
+      const light = document.getElementById("light");
+      const root = document.documentElement;
+
+      // add event listener
+      light.addEventListener("click", () => {
+        if (light.innerHTML === "LIGHT MODE") {
+          // change root --primary-color to white
+          light.innerHTML = "DARK MODE";
+          root.style.setProperty("--primary-color", "#fff");
+          root.style.setProperty("--secondary-color", "#1e1e1e");
+          localStorage.setItem("lightMode", "dark"); // Save light mode preference
+        } else {
+          light.innerHTML = "LIGHT MODE";
+          root.style.setProperty("--primary-color", "#1e1e1e");
+          root.style.setProperty("--secondary-color", "#fff");
+          localStorage.setItem("lightMode", "light"); // Save light mode preference
+        }
+      });
+
+      // save data and light to local storage
+      textarea.addEventListener("keyup", () => {
+        localStorage.setItem("data", textarea.value);
+      });
+
+      // get data from local storage
+      const data = localStorage.getItem("data");
+
+      // check if data is not null
+      if (data) {
+        textarea.value = data;
+      }
+
+      // while clicked save , save in device as txt file
+      const save = document.getElementById("save");
+      save.addEventListener("click", () => {
+        const text = textarea.value;
+        const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "notepad.txt";
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+
+      // clear
+      const clear = document.getElementById("clear");
+      clear.addEventListener("click", () => {
+        textarea.value = "";
+      });
+
+      const lightMode = localStorage.getItem("lightMode");
+      if (lightMode === "dark") {
+        light.innerHTML = "DARK MODE";
+        root.style.setProperty("--primary-color", "#fff");
+        root.style.setProperty("--secondary-color", "#1e1e1e");
+      } else {
+        light.innerHTML = "LIGHT MODE";
+        root.style.setProperty("--primary-color", "#1e1e1e");
+        root.style.setProperty("--secondary-color", "#fff");
+      }
+
+        // word count
+        const wordCount = document.getElementById("word-count");
+        textarea.addEventListener("keyup", () => {
+            const text = textarea.value;
+            //ignore first and last white space
+            const textTrim = text.trim();
+            // split by white space
+            const words = textTrim.split(/\s+/);
+            //check if the first word is empty
+            if (words[0] === "") {
+                wordCount.innerHTML = 0;
+            } else {
+                wordCount.innerHTML = words.length;
+            }
+
+        });
+    </script>
+  </body>
+</html>
