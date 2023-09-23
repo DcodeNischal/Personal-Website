@@ -19,8 +19,8 @@ html {
   color: var(--secondary);
 }
 
-html::-webkit-scrollbar{
-  display:none;
+html::-webkit-scrollbar {
+  display: none;
 }
 
 /* Navbar */
@@ -228,7 +228,7 @@ section {
   position: absolute;
   width: 16px;
   height: 16px;
-  background:linear-gradient(
+  background: linear-gradient(
     to right,
     rgb(255, 255, 255) 50%,
     rgb(22, 20, 20) 50%
@@ -237,21 +237,23 @@ section {
   left: calc(50% - 12px);
   bottom: -7px;
   border-radius: 50%;
-  animation: rolling-ball 6s linear;
+  animation: rolling-ball 6s linear infinite;
 }
 
 /* make animation of a rolling ball */
 @keyframes rolling-ball {
   0% {
-    transform: translateX(-30px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
   }
-  33% {
-    transform: translateX(30px) rotate(180deg);
+  25% {
+    transform: translateX(60px) rotate(360deg);
   }
-  66% {
-    transform: translateX(-30px) rotate(-360deg);
+  75% {
+    transform: translateX(-60px) rotate(-180deg);
   }
-  
+  100% {
+    transform: translateX(0px) rotate(360deg);
+  }
 }
 
 .about-content {
@@ -267,8 +269,6 @@ section {
   margin-right: 100px;
   transition: 1s;
 }
-
-
 
 .about-text {
   flex: 1;
@@ -493,6 +493,11 @@ section.dark .section-title::after {
   color: #444;
 }
 
+#projects a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
 .contact-info {
   display: flex;
   justify-content: space-around;
@@ -591,18 +596,14 @@ section.dark .section-title::after {
 
 footer {
   color: var(--secondary);
-  padding: 80px 0;
+  padding-top: 20px;
   text-align: center;
-  background: linear-gradient(
-    to left,
-    rgb(39, 38, 38) 50%,
-    rgb(22, 20, 20) 50%
-  );
+  background: var(--secondary);
 }
 
 .copyright {
-  margin-bottom: 20px;
   font-size: 15px;
+  color: var(--primary);
 }
 
 .copyright a {
@@ -686,6 +687,10 @@ footer {
     text-align: center;
   }
 
+  .project {
+    width: 100%;
+  }
+
   .contact-info {
     flex-direction: column;
     align-items: center;
@@ -704,6 +709,17 @@ footer {
     text-decoration: none;
   }
 
+  .time-line {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .block {
+    width: 100%;
+  }
+
   @media screen and (max-width: 600px) {
     .inner-width {
       padding: 0 20px;
@@ -714,11 +730,13 @@ footer {
     width: 100%;
   }
 
-  .services {
+  .services,
+  .project {
     height: auto;
   }
 
-  .service {
+  .service,
+  .project {
     width: 100%;
   }
   .nameZone,
