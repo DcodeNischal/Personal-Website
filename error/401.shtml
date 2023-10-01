@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>401 Unauthorized</title>
+    <link rel="shortcut icon" href="/images/logow-modified.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/javascript/scripts.js"></script>
+
+    <style>
+      body {
+        background-color: #111;
+      }
+      .error-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #111;
+        padding: 0 15px;
+      }
+
+      .error {
+        text-align: center;
+      }
+
+      .error-code {
+        font-size: 10rem;
+        font-weight: 700;
+        color: #e74c3c;
+      }
+
+      .error-message {
+        font-size: 2rem;
+        font-weight: 300;
+        color: #98a6ad;
+      }
+
+      .error-message a {
+        color: #34495e;
+        text-decoration: none;
+      }
+
+      .error-message a:hover {
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 768px) {
+        .error-code {
+          font-size: 7rem;
+        }
+
+        .error-message {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .error-code {
+          font-size: 5rem;
+        }
+
+        .error-message {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar primary">
+      <div class="inner-width">
+        <a href="/" class="logo"
+          ><p title="This is some random name I use almost everywhere.">
+            GodZer0
+          </p></a
+        >
+        <button class="menu-toggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="navbar-menu">
+          <a href="#home" title="Welcome section">Home</a>
+          <a href="#about" title="Who I am ?">About</a>
+          <a href="#services" title="What I do">Services</a>
+          <a href="#education" title="Where did/do I study ?">Education</a>
+          <a href="#contact" title="Contact/Message me">Contact</a>
+          <a
+            href="https://nischaldhakal.blogspot.com"
+            target="_blank"
+            id="blog"
+            title="Blogs I do in my free time."
+            >Blogs</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="error-container">
+      <div class="error">
+        <div class="error-code">401</div>
+        <div class="error-message">Unauthorized</div>
+        <div class="error-message">
+          The request has not been applied because it lacks valid authentication
+          credentials for the target resource.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
