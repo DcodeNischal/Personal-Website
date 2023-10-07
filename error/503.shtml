@@ -95,11 +95,11 @@
           <span></span>
         </button>
         <div class="navbar-menu">
-          <a href="#home" title="Welcome section">Home</a>
-          <a href="#about" title="Who I am ?">About</a>
-          <a href="#services" title="What I do">Services</a>
-          <a href="#education" title="Where did/do I study ?">Education</a>
-          <a href="#contact" title="Contact/Message me">Contact</a>
+          <a href="/#home" title="Welcome section">Home</a>
+          <a href="/#about" title="Who I am ?">About</a>
+          <a href="/#services" title="What I do">Services</a>
+          <a href="/#education" title="Where did/do I study ?">Education</a>
+          <a href="/#contact" title="Contact/Message me">Contact</a>
           <a
             href="https://nischaldhakal.blogspot.com"
             target="_blank"
