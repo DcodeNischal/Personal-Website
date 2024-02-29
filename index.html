@@ -53,6 +53,51 @@
   </head>
 
   <body>
+    <div class="preloader" id="preloader">
+      <svg
+        class="tea"
+        width="37"
+        height="48"
+        viewbox="0 0 37 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M27.0819 17H3.02508C1.91076 17 1.01376 17.9059 1.0485 19.0197C1.15761 22.5177 1.49703 29.7374 2.5 34C4.07125 40.6778 7.18553 44.8868 8.44856 46.3845C8.79051 46.79 9.29799 47 9.82843 47H20.0218C20.639 47 21.2193 46.7159 21.5659 46.2052C22.6765 44.5687 25.2312 40.4282 27.5 34C28.9757 29.8188 29.084 22.4043 29.0441 18.9156C29.0319 17.8436 28.1539 17 27.0819 17Z"
+          stroke="var(--secondary)"
+          stroke-width="2"
+        ></path>
+        <path
+          d="M29 23.5C29 23.5 34.5 20.5 35.5 25.4999C36.0986 28.4926 34.2033 31.5383 32 32.8713C29.4555 34.4108 28 34 28 34"
+          stroke="var(--secondary)"
+          stroke-width="2"
+        ></path>
+        <path
+          id="teabag"
+          fill="var(--secondary)"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M16 25V17H14V25H12C10.3431 25 9 26.3431 9 28V34C9 35.6569 10.3431 37 12 37H18C19.6569 37 21 35.6569 21 34V28C21 26.3431 19.6569 25 18 25H16ZM11 28C11 27.4477 11.4477 27 12 27H18C18.5523 27 19 27.4477 19 28V34C19 34.5523 18.5523 35 18 35H12C11.4477 35 11 34.5523 11 34V28Z"
+        ></path>
+        <path
+          id="steamL"
+          d="M17 1C17 1 17 4.5 14 6.5C11 8.5 11 12 11 12"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="var(--secondary)"
+        ></path>
+        <path
+          id="steamR"
+          d="M21 6C21 6 21 8.22727 19 9.5C17 10.7727 17 13 17 13"
+          stroke="var(--secondary)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+      <p>Loading...</p>
+    </div>
     <!-- Navbar -->
     <nav class="navbar primary">
       <div class="inner-width">
@@ -127,7 +172,7 @@
         <h1 class="section-title">About</h1>
         <div class="about-content">
           <img
-            src="images/logome.png"
+            src="images/logome.jpg"
             alt=""
             class="about-pic"
             id="about-pic"
@@ -156,90 +201,75 @@
         <div class="skills">
           <div class="skill">
             <div class="skill-info">
-              <span>HTML <i class="fab fa-brands fa-html5"></i></span>
-              <span class="desktop">Still Learning</span>
+              <span>
+                <!-- Frontend Development -->
+                Frontend Development &nbsp; &nbsp;
+                <i class="fab fa-brands fa-html5"></i>
+                <i class="fab fa-brands fa-css3"></i>
+                <i class="fab fa-brands fa-js"></i>
+                <i class="fab fa-brands fa-react"></i>
+                <i class="fab fa-brands fa-bootstrap"></i>
+                <i class="fab fa-brands fa-sass"></i>
+              </span>
             </div>
-            <div class="skill-bar html"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>CSS <i class="fab fa-brands fa-css3-alt"></i></span>
-              <span>Still Learning</span>
-            </div>
-            <div class="skill-bar css"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>JavaScript <i class="fab fa-brands fa-js"></i></span>
-              <span>Still Learning</span>
-            </div>
-            <div class="skill-bar js"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>Python <i class="fab fa-brands fa-python"></i></span>
-              <span>Practicing Regularly</span>
-            </div>
-            <div class="skill-bar py"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span
-                >Photoshop <i class="fas fa-brands fa-photo-video"></i
-              ></span>
-              <span>Doing when I'm bored</span>
-            </div>
-            <div class="skill-bar ps"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>C Programming <b>C</b></span>
-              <span>Not Practicing</span>
-            </div>
-            <div class="skill-bar c"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>Php <i class="fab fa-brands fa-php"></i></span>
-              <span>Still Learning</span>
-            </div>
-            <div class="skill-bar php"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>C++ Programming <b>C++</b></span>
-              <span>Practicing Sometimes</span>
-            </div>
-            <div class="skill-bar cpp"></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-info">
-              <span>Database <i class="fa fa-solid fa-database"></i></span>
-              <span>Still Learning</span>
-            </div>
-            <div class="skill-bar mysql"></div>
+            <div class="skill-bar frontend"></div>
           </div>
 
           <div class="skill">
             <div class="skill-info">
               <span>
-                Bash
-                <img
-                  src="https://camo.githubusercontent.com/a7de91b915d8b286dda762e3683d9a1c961692d43f8349d020ecd54634a823cf/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d61737465722f6173736574732f4c6f676f732f4964656e746974792f504e472f424153485f6c6f676f2d7472616e73706172656e742d62672d636f6c6f722e706e67"
-                  alt=""
-                  style="height: 15px"
-              /></span>
-              <span>Interested/Learning Slowly</span>
+                <!-- Backend Development -->
+                Backend Development &nbsp; &nbsp;
+                <i class="fab fa-brands fa-node"></i>
+                <i class="fab fa-brands fa-python"></i>
+                <i class="fab fa-brands fa-java"></i>
+                <i class="fab fa-brands fa-php"></i>
+                <i class="fab fa-brands fa-laravel"></i>
+              </span>
             </div>
-            <div class="skill-bar bash"></div>
+            <div class="skill-bar backend"></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>
+                <!-- Database Management -->
+                Database Management &nbsp; &nbsp;
+              </span>
+            </div>
+            <div class="skill-bar database"></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>
+                <!-- Graphic Desin with logos -->
+                Graphic Design &nbsp; &nbsp;
+                <i class="fab fa-brands fa-figma"></i>
+                <i class="fab fa-brands fa-adobe"></i>
+              </span>
+            </div>
+            <div class="skill-bar design"></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>
+                <!-- Digital Marketing -->
+                Digital Marketing &nbsp; &nbsp;
+              </span>
+            </div>
+            <div class="skill-bar marketing"></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-info">
+              <span>
+                <!-- Cybersecurity -->
+                Cybersecurity &nbsp; &nbsp;
+              </span>
+            </div>
+            <div class="skill-bar cybersecurity"></div>
           </div>
         </div>
       </div>
@@ -251,11 +281,12 @@
         <h1 class="section-title">Services</h1>
         <div class="services">
           <div class="service">
-            <i class="icon fas fa-bullhorn"></i>
-            <h4>Digital Marketing</h4>
+            <i class="icon fas fa-globe"></i>
+            <h4>Full stack Web Development</h4>
             <p>
-              in different social media and search platforms through SEO, Email
-              and Content marketing.
+              of e-commerce, news or blog portals or any personal website with
+              attractive UI and better UX. It may take relatively long time for
+              the business class projects.
             </p>
           </div>
 
@@ -279,12 +310,11 @@
           </div>
 
           <div class="service">
-            <i class="icon fas fa-globe"></i>
-            <h4>Full stack Web Development</h4>
+            <i class="icon fas fa-bullhorn"></i>
+            <h4>Digital Marketing</h4>
             <p>
-              of e-commerce, news or blog portals or any personal website with
-              attractive UI and better UX. It may take relatively long time for
-              the business class projects.
+              in different social media and search platforms through SEO, Email
+              and Content marketing.
             </p>
           </div>
         </div>
@@ -324,6 +354,20 @@
         <div class="services">
           <a
             class="service"
+            href="https://github.com/Dcodenischal/ProjectVishnu/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h4>Project Vishnu - Bug Bounty Platform</h4>
+            <p>
+              Project Vishnu is a bug bounty platform that connects security
+              researchers with organizations. It is made using HTML, CSS,
+              JavaScript, PHP and MySQL.
+            </p>
+          </a>
+
+          <a
+            class="service"
             href="Projects/IPaddressFinder/"
             rel="noopener noreferrer"
             target="_blank"
@@ -347,6 +391,48 @@
               It is a simple notepad application that can be used to take notes
               and save it in the local storage of the browser. You can save your
               notes locally too.
+            </p>
+          </a>
+
+          <a
+            class="service"
+            href="https://github.com/Dcodenischal/PulsePath/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h4>PulsePath</h4>
+            <p>
+              PulsePath is a cutting-edge web application meticulously crafted
+              to streamline and optimize emergency response operations for
+              ambulance services with the mision of saving lifes in one click.
+            </p>
+          </a>
+
+          <a
+            class="service"
+            href="https://github.com/Dcodenischal/AI-MiniProject/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h4>Sentiment Analysis</h4>
+            <p>
+              Sentiment Analysis is a web application that analyzes the
+              sentiment of input text as positive, negative or neutral. It is
+              made using Python.
+            </p>
+          </a>
+
+          <a
+            class="service"
+            href="https://github.com/Dcodenischal/keylogger/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h4>Keylogger</h4>
+            <p>
+              Keylogger is a simple keylogger that logs the keys pressed by the
+              user and saves it in a text file. It is made using Python.(Mail
+              forwarding feature is comming soon)
             </p>
           </a>
         </div>

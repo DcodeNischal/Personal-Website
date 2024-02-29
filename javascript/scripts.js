@@ -23,5 +23,8 @@ $(document).ready(function () {
     $(this).toggleClass("active");
     $(".a").toggleClass("active");
   });
+});
 
+$(window).on("load", function () {
+  $("#preloader").fadeOut("slow");
 });
