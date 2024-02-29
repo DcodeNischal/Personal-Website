@@ -319,7 +319,7 @@ svg.tea #steamR {
 
 .sm a:hover {
   color: #808080;
-  transform: scale(1.5);
+  transform: scale(1.12);
 }
 
 #home .buttons {
@@ -336,18 +336,31 @@ svg.tea #steamR {
   border: 1px solid;
   padding: 14px 0;
   border-radius: 6px;
-  transition: 0.2s linear;
+  transition: 0.2s ease-in-out;
   text-decoration: none;
   background-color: rgb(0, 0, 0, 0.2);
 }
 
-#home .buttons a:hover {
-  background-color: #808080;
+#home .buttons a:nth-child(1) {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+#home .buttons a:nth-child(2) {
+  background-color: var(--primary);
   color: var(--secondary);
 }
 
-#home .buttons a:hover {
-  transform: scale(0.9);
+#home .buttons a:nth-child(1):hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: 0.7s ease-in-out;
+}
+
+#home .buttons a:nth-child(2):hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: 0.7s ease-in-out;
 }
 
 section {
@@ -570,8 +583,7 @@ section.dark .section-title::after {
 }
 
 .service:hover {
-  background-color: #808080;
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .service:hover .icon {
@@ -615,10 +627,6 @@ section.dark .section-title::after {
   top: 30px;
   border-radius: 50%;
 }
-.block:hover {
-  transform: scale(0.9);
-  transition: 0.5s;
-}
 
 .block h3 {
   font-size: 16px;
@@ -633,48 +641,6 @@ section.dark .section-title::after {
 #projects a {
   text-decoration: none;
   color: var(--secondary);
-}
-
-.contact-info {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-  text-decoration: none;
-  gap: 25px;
-  margin-bottom: 100px;
-}
-
-.contact-info .item {
-  width: calc(33% - 20px);
-  height: 160px;
-  background-color: rgb(0, 0, 0, 0.2);
-  color: var(--secondary);
-  border: 1px solid #808080;
-  text-align: center;
-  border-radius: 1px;
-  cursor: pointer;
-  transition: 0.3s linear;
-  text-decoration: none;
-}
-
-.contact-info a {
-  display: block;
-  font-size: 40px;
-  line-height: 120px;
-  height: 100px;
-  text-decoration: none;
-  color: var(--secondary);
-}
-
-.contact-info .item:hover a {
-  color: var(--secondary);
-  transition: 0.7s;
-}
-
-.contact-info .item:hover {
-  background-color: #808080;
-  transform: scale(0.9);
 }
 
 .contact-form {
