@@ -732,10 +732,10 @@ section.dark .section-title::after {
 }
 
 footer {
-  color: var(--secondary);
+  color: var(--primary);
   padding: 20px;
   text-align: center;
-  background: var(--secondary);
+  background: var(--primary);
   height: fit-content;
 }
 
@@ -746,7 +746,7 @@ footer .inner-width {
 }
 
 footer .sm a {
-  color: var(--primary);
+  color: var(--secondary);
   font-size: 22px;
   margin: 0 10px;
   transition: 0.2s linear;
@@ -755,7 +755,7 @@ footer .sm a {
 
 .copyright {
   font-size: 15px;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .copyright a {
