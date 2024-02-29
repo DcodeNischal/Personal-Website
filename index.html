@@ -523,7 +523,7 @@
     <footer>
       <div class="inner-width">
         <div class="copyright">
-          &copy; 2023 | Created &amp; Designed By
+          &copy; <span id="year"></span> | Created &amp; Designed By
           <a href="mailto:dnischal11@gmail.com?subject=Website Email"
             >Nischal Dhakal</a
           >
@@ -563,5 +563,9 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-YP56M1P9J8"
     ></script>
+    <script>
+      // find current year
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
   </body>
 </html>
