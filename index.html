@@ -430,11 +430,7 @@
     <section id="form" class="primary">
       <div class="inner-width">
         <h1 class="section-title">Any queries ?</h1>
-        <form
-          action="https://formsubmit.co/2c0ff9022327706cd6181c8fafa99eb6"
-          class="contact-form"
-          method="post"
-        >
+        <form class="contact-form" method="post">
           <input
             type="text"
             id="name"
@@ -465,6 +461,18 @@
             placeholder="Message *"
             required
           ></textarea>
+          <!-- Submitting.... -->
+          <div id="submitting" style="color: black; display: none">
+            🔄 Submitting...
+          </div>
+          <!-- success message -->
+          <div id="success-message" style="color: green; display: none">
+            ✅ Sent Successful
+          </div>
+          <!-- error message -->
+          <div id="error-message" style="color: red; display: none">
+            ❌ Something went wrong`
+          </div>
           <input type="submit" value="Send Message" class="btn" />
           <input
             type="hidden"
@@ -522,6 +530,31 @@
     <script>
       // find current year
       document.getElementById("year").innerHTML = new Date().getFullYear();
+
+      //use ajax to submit form https://formsubmit.co/ajax/2c0ff9022327706cd6181c8fafa99eb6/
+      $(".contact-form").submit(function (e) {
+        e.preventDefault();
+        var form = $(this);
+        var formdata = form.serialize();
+        // hide all messages
+        $("#success-message").css("display", "none");
+        $("#error-message").css("display", "none");
+        // show submitting message
+        $("#submitting").css("display", "block");
+        $.ajax({
+          type: "POST",
+          url: "https://formsubmit.co/ajax/2c0ff9022327706cd6181c8fafa99eb6",
+          data: formdata,
+          success: function () {
+            $("#submitting").css("display", "none");
+            $("#success-message").css("display", "block");
+            form.trigger("reset");
+          },
+          error: function () {
+            $("#error-message").css("display", "block");
+          },
+        });
+      });
     </script>
   </body>
 </html>
