@@ -1,0 +1,136 @@
+<!-- Timer -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POMODORO</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="https://services.garmin.com/appsLibraryBusinessServices_v0/rest/apps/4b11ad8f-3e48-4112-83df-336065c49829/icon/d31ca7be-0497-4370-801f-97a29dc3b584"
+    />
+  </head>
+  <body>
+    <!-- Timer -->
+    <div class="timer">
+      <div class="timer__header">
+        <h1>POMODORO</h1>
+      </div>
+      <div class="timer__body">
+        <div class="timer__body__time">
+          <span id="minutes">25</span> : <span id="seconds">00</span>
+        </div>
+        <div class="timer__body__buttons">
+          <button class="timer__body__buttons__button" id="start">START</button>
+          <button class="timer__body__buttons__button" id="stop">STOP</button>
+          <button class="timer__body__buttons__button" id="reset">RESET</button>
+        </div>
+
+        <div class="warning" id="punished"></div>
+      </div>
+
+      <div class="timer__footer">
+        <p>Created by <a href="https://nischaldhakal.com.np">GodZer0</a></p>
+      </div>
+    </div>
+
+    <script>
+      // get elements
+      const minutes = document.getElementById("minutes");
+      const seconds = document.getElementById("seconds");
+      const start = document.getElementById("start");
+      const stop = document.getElementById("stop");
+      const reset = document.getElementById("reset");
+      const warning = document.getElementById("warning");
+      const punished = document.getElementById("punished");
+      const root = document.documentElement;
+
+      const audio = new Audio(
+        "https://www.soundjay.com/buttons/sounds/button-3.mp3"
+      );
+
+      stop.disabled = true;
+
+      // add event listener
+      start.addEventListener("click", () => {
+        audio.play();
+        // enable stop button
+        stop.disabled = false;
+        punished.innerHTML = "";
+        // get time
+        let min = 25;
+        let sec = 0;
+
+        // start timer
+        let timer = setInterval(() => {
+          if (sec === 0) {
+            if (min === 0) {
+              clearInterval(timer);
+            } else {
+              min--;
+              sec = 59;
+            }
+          } else {
+            sec--;
+          }
+
+          // update time
+          minutes.innerHTML = min < 10 ? "0" + min : min;
+          seconds.innerHTML = sec < 10 ? "0" + sec : sec;
+        }, 1000);
+
+        // stop timer
+        stop.addEventListener("click", () => {
+          audio.play();
+          punished.innerHTML =
+            "You have been punished. Gain control over your feelings. Start Again.";
+          clearInterval(timer);
+          stop.disabled = true;
+        });
+
+        // reset timer
+        reset.addEventListener("click", () => {
+          audio.play();
+          clearInterval(timer);
+          minutes.innerHTML = "25";
+          seconds.innerHTML = "00";
+          start.disabled = false;
+          punished.innerHTML = "";
+          stop.disabled = true;
+        });
+
+        // After starting you cannot start again
+        start.disabled = true;
+
+        // After timer is up you can start again
+        setTimeout(() => {
+          start.disabled = false;
+        }, 1500000);
+
+        // if user goes to other application or tab, timer will reset
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "hidden") {
+            clearInterval(timer);
+            reset.click();
+            punished.innerHTML =
+              "You have been punished. Focus and start again.";
+          }
+        });
+
+        // on window change too
+        window.addEventListener("blur", () => {
+          // check if timer is running or not
+
+          if (stop.disabled === false) {
+            clearInterval(timer);
+            reset.click();
+            punished.innerHTML =
+              "You have been punished. Focus and start again.";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
