@@ -51,6 +51,10 @@
         "https://www.soundjay.com/buttons/sounds/button-3.mp3"
       );
 
+      const timeup = new Audio(
+        "https://www.soundjay.com/clock/sounds/alarm-clock-01.mp3"
+      );
+
       stop.disabled = true;
 
       // add event listener
@@ -60,8 +64,8 @@
         stop.disabled = false;
         punished.innerHTML = "";
         // get time
-        let min = 25;
-        let sec = 0;
+        let min = parseInt(minutes.innerHTML);
+        let sec = parseInt(seconds.innerHTML);
 
         // start timer
         let timer = setInterval(() => {
@@ -128,8 +132,19 @@
             reset.click();
             punished.innerHTML =
               "You have been punished. Focus and start again.";
+            stop.disabled = true;
           }
         });
+
+        // When timer is 00:00 set a timeout to start again
+        setTimeout(() => {
+          if (minutes.innerHTML === "00" && seconds.innerHTML === "00") {
+            clearInterval(timer);
+            timeup.play();
+            punished.innerHTML = "Set Completed. Start Again.";
+            stop.disabled = true;
+          }
+        }, 1500000);
       });
     </script>
   </body>
