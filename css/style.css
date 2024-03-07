@@ -174,12 +174,6 @@ svg.tea #steamR {
   }
 }
 
-/* Change mouse cursor */
-
-body {
-  cursor: url("images/logome.jpg"), auto;
-}
-
 /* Navbar */
 
 .navbar {
@@ -271,17 +265,19 @@ body {
 #home {
   height: 100vh;
   min-height: 500px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to left,
     rgb(39, 38, 38) 50%,
     rgb(22, 20, 20) 50%
-  );
+  ); */
+  background: url("https://wallpaperaccess.com/full/5728425.jpg") no-repeat
+    center center/cover fixed;
 }
 
 #home .inner-width {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
   text-align: center;
 }
@@ -289,6 +285,10 @@ body {
 #home .content {
   width: 100%;
   color: var(--secondary);
+  z-index: 1;
+  position: relative;
+  padding: 0 20px;
+  text-align: left;
 }
 
 #home .content h1 {
@@ -339,28 +339,50 @@ body {
   transition: 0.2s ease-in-out;
   text-decoration: none;
   background-color: rgb(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: center;
 }
 
 #home .buttons a:nth-child(1) {
-  background-color: var(--secondary);
+  background-color: rgb(255, 255, 255, 0.5);
   color: var(--primary);
+  /* shadow */
+  box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 #home .buttons a:nth-child(2) {
-  background-color: var(--primary);
+  background-color: rgb(0, 0, 0, 0.5);
   color: var(--secondary);
+  /* shadow */
+  box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 #home .buttons a:nth-child(1):hover {
-  background-color: var(--primary);
-  color: var(--secondary);
-  transition: 0.7s ease-in-out;
+  background-color: rgb(255, 255, 255);
+  color: var(--primary);
+  transition: 0.3s linear;
 }
 
 #home .buttons a:nth-child(2):hover {
-  background-color: var(--secondary);
-  color: var(--primary);
-  transition: 0.7s ease-in-out;
+  background-color: rgb(0, 0, 0);
+  color: var(--secondary);
+  transition: 0.3s linear;
+}
+
+/* display hero-image exactly from bottom 0 */
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 90%;
+  z-index: 0;
+}
+
+.hero-image img {
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.5) grayscale(1);
 }
 
 section {
@@ -526,11 +548,13 @@ section {
 }
 
 section.dark {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgb(39, 38, 38) 50%,
     rgb(22, 20, 20) 50%
-  );
+  ); */
+  background: url("https://wallpaperaccess.com/full/5728425.jpg") no-repeat
+    center center/cover fixed;
 }
 
 section.dark .section-title {
@@ -565,8 +589,8 @@ section.dark .section-title::after {
   color: var(--secondary);
   cursor: pointer;
   transition: 0.3s linear;
-  background-color: rgb(0, 0, 0, 0.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0);
 }
 
 .service .icon {
@@ -643,18 +667,19 @@ section.dark .section-title::after {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   padding: 20px;
 }
 
 .project {
-  background-color: rgba(0, 0, 0, 0.1);
   color: var(--secondary);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 500px;
   text-align: center;
+
+  background-color: rgb(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0);
 }
 
 .project-name {
@@ -673,11 +698,14 @@ section.dark .section-title::after {
 .project-description {
   font-size: 1rem;
   margin-bottom: 20px;
+  font-style: italic;
+  color: #bdbdbd;
 }
 
 .project-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 .live-demo,
@@ -685,8 +713,8 @@ section.dark .section-title::after {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  color: var(--secondary);
-  background-color: var(--dark-primary);
+  color: var(--primary);
+  background-color: var(--secondary);
   transition: 0.3s;
   border: 1px solid var(--secondary);
 }
@@ -694,6 +722,31 @@ section.dark .section-title::after {
 .live-demo:hover,
 .source-code:hover {
   background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.nav-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.nav-button button {
+  display: inline-block;
+  margin: 15px 10px;
+  color: var(--secondary);
+  font-size: 15px;
+  font-weight: 500;
+  width: 180px;
+  border: 1px solid;
+  padding: 14px 0;
+  border-radius: 6px;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  background-color: rgb(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: center;
 }
 
 .contact-form {
@@ -849,6 +902,14 @@ footer .sm a {
     max-width: 800px;
   }
 
+  #home .hero-image {
+    display: none;
+  }
+
+  #home .content {
+    text-align: center;
+  }
+
   .about-pic {
     margin: 0 auto 60px;
   }
@@ -941,13 +1002,21 @@ footer .sm a {
   flex-direction: column;
   gap: 20px;
   color: var(--secondary);
-  background-color: rgb(0, 0, 0, 0.9);
+  background-color: rgb(0, 0, 0, 0.8);
   text-align: center;
 }
 
 #error-message span,
 #success-message span,
 #submitting span {
-  padding: 20px;
-  border-radius: 50px;
+  padding: 10%;
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0);
+  transition: 0.3s linear;
 }
