@@ -531,24 +531,7 @@
             placeholder="Message *"
             required
           ></textarea>
-          <!-- Submitting.... -->
-          <div id="submitting" style=" display:none">
-           <span> 🔄 <br><br>Submitting... <br>
-            wait a moment...</span>
-          </div>
-          <!-- success message -->
-          <div id="success-message" style="color: green; display: none">
-           <span> ✅ <br><br>Sent Successful <br>
-            I will get back to you soon.</span>
-          </div>
-          <!-- error message -->
-          <div id="error-message" style="color: red; display:none">
-            <span>
-              ❌ <br> <br>Something went wrong
-            <br>
-            Please mail me at <strong>dnischal11@gmail.com</strong>
-            </span>
-          </div>
+          
           <input type="submit" value="Send Message" class="btn" id="submit-form"/>
           <input
             type="hidden"
@@ -603,22 +586,42 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-YP56M1P9J8"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       // find current year
       document.getElementById("year").innerHTML = new Date().getFullYear();
 
-      $("#previous").css("display", "none");
-
       //use ajax to submit form to https://formsubmit.co/ajax/2c0ff9022327706cd6181c8fafa99eb6/
       $(".contact-form").submit(function (e) {
+
+        // get email
+        var email = $("#email").val();
+        // check if email is valid using api
+        $.get(
+          "https://api.trumail.io/v2/lookups/json?email=" + email,
+          function (data) {
+            if (data.deliverable == false) {
+              Swal.fire({
+                title: "Invalid Email",
+                html: "Please enter a valid email address.",
+                icon: "error",
+              });
+              e.preventDefault();
+            }
+          }
+        );
         e.preventDefault();
         var form = $(this);
         var formdata = form.serialize();
         // show submitting message
-        $("#submitting").css("display", "flex");
-        // hide all messages
-        $("#success-message").css("display", "none");
-        $("#error-message").css("display", "none");
+        Swal.fire({
+          title: "Submitting...",
+          html: "Please wait a moment...",
+          didOpen: () => {
+            Swal.showLoading();
+          },
+        });
+      
         
         // disable the submit button
         $("#submit-form").attr("disabled", true);
@@ -631,27 +634,25 @@
           url: "https://formsubmit.co/ajax/2c0ff9022327706cd6181c8fafa99eb6",
           data: formdata,
           success: function () {
-            $("#submitting").css("display", "none");
-            $("#success-message").css("display", "flex");
+            Swal.fire({
+              title: "Sent Successful",
+              html: "I will get back to you soon.",
+              icon: "success",
+            });
             form.trigger("reset");
-            // after 2 seconds, hide the success message
-            setTimeout(function () {
-              $("#success-message").css("display", "none");
-            }, 2000);
+            
             // enable the submit button
             $("#submit-form").attr("disabled", false);
             // enable scrolling
             $("body").css("overflow", "auto");
           },
           error: function () {
-            $("#error-message").css("display", "flex");
-            $("#submitting").css("display", "none");
-            // after 5 seconds, hide the error message
-            setTimeout(function () {
-              $("#error-message").css("display", "none");
-            }, 5000);
-            // enable the submit button
-            $("#submit-form").attr("disabled", false);
+           Swal.fire({
+              title: "Something went wrong",
+              html: "Please mail me at <strong>dnischal11@gmail.com</strong>",
+              icon: "error",
+              showCloseButton: true,
+            });
             // enable scrolling
             $("body").css("overflow", "auto");
           },
