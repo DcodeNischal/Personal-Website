@@ -345,7 +345,7 @@ svg.tea #steamR {
 }
 
 #home .buttons a:nth-child(1) {
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255, 0.7);
   color: var(--primary);
   /* shadow */
   box-shadow: 0 0 10px rgb(0, 0, 0);
@@ -382,7 +382,23 @@ svg.tea #steamR {
 .hero-image img {
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.5) grayscale(1);
+  filter: contrast(1.2) grayscale(1) brightness(1);
+  transition: 0.3s linear;
+  animation: show 1s linear;
+}
+
+@keyframes show {
+  0% {
+    filter: contrast(1.2) grayscale(1) brightness(0);
+    transition: 0.3s linear;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    filter: contrast(1.2) grayscale(1) brightness(1);
+    transition: 0.3s linear;
+    opacity: 0.8;
+  }
 }
 
 section {
